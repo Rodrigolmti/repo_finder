@@ -4,8 +4,8 @@ With this application you can search for repositories in the GitHub API, and if 
 your previous searches will be saved locally, so you can search them again.
 
 <p align="center">
+      <img src="https://github.com/Rodrigolmti/repo_finder/blob/master/images/WhatsApp%20Image%202020-12-06%20at%2010.58.26.jpeg" width="350" title="hover text">
   <img src="https://github.com/Rodrigolmti/repo_finder/blob/master/images/WhatsApp%20Image%202020-12-06%20at%2010.58.26%20(1).jpeg" width="350" title="hover text">
-    <img src="https://github.com/Rodrigolmti/repo_finder/blob/master/images/WhatsApp%20Image%202020-12-06%20at%2010.58.26.jpeg" width="350" title="hover text">
 </p>
 
 ## Architecture
