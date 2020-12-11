@@ -1,0 +1,13 @@
+plugins {
+    id "dep"
+    id "kotlin"
+    id "kotlin-kapt"
+}
+
+dependencies {
+    implementation Kotlin.stdlib
+    implementation Coroutines.core
+
+    implementation Dagger.core
+    kapt Dagger.compiler
+}

@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+rootProject.name = "repo_finder"
+
+includeBuild 'build-plugins'
+
+include ':app',
+        ':injector',
+        ':kotlin-utils',
+        ':core-android',
+        ':feature:repositories'

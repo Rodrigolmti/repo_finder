@@ -1,0 +1,97 @@
+plugins {
+    id "dep"
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionName Releases.versionName
+        versionCode Releases.versionCode
+        applicationId ApplicationId.id
+
+        vectorDrawables.useSupportLibrary true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+        resValues = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles fileTree(dir: 'proguard', includes: ['*.pro']).asList().toArray()
+            consumerProguardFiles 'proguard-file.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            matchingFallbacks = ['release']
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/kotlin'
+        }
+    }
+
+    aaptOptions {
+        cruncherEnabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/AL2.0'
+    }
+}
+
+dependencies {
+    implementation Kotlin.stdlib
+
+    implementation Retrofit.core
+    implementation Retrofit.moshiConverter
+    implementation Retrofit.interceptor
+
+    implementation AndroidX.ktx
+    implementation AndroidX.appcompat
+    implementation AndroidX.design
+    implementation AndroidX.fragment
+    implementation AndroidX.navigationFragment
+    implementation AndroidX.navigationUi
+    implementation Layout.constraint
+
+    implementation project(Modules.coreAndroid)
+    implementation project(Modules.kotlinUtils)
+    implementation project(Modules.injector)
+
+    implementation project(Modules.repositories)
+
+    implementation Moshi.coreKotlin
+    kapt Moshi.codeGen
+
+    implementation Dagger.core
+    kapt Dagger.androidProcessor
+    kapt Dagger.compiler
+}

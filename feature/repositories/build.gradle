@@ -1,0 +1,26 @@
+plugins {
+    id "config-feature-module"
+    id "kotlin-kapt"
+    id 'kotlin-android'
+}
+
+apply from: "$rootDir/config-feature-module.gradle"
+
+dependencies {
+    implementation project(Modules.kotlinUtils)
+    implementation project(Modules.injector)
+
+    implementation ImageLoad.coil
+
+    implementation Room.runtime
+    implementation Room.ktx
+    kapt Room.compiler
+
+    implementation Dagger.core
+    kapt Dagger.androidProcessor
+    kapt Dagger.compiler
+
+    implementation Retrofit.core
+    implementation Moshi.coreKotlin
+    kapt Moshi.codeGen
+}

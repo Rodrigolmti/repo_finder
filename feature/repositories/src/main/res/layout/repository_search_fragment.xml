@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:paddingStart="@dimen/space_16"
+    android:paddingTop="@dimen/space_16"
+    android:paddingEnd="@dimen/space_16"
+    tools:context=".view.search.RepositorySearchFragment">
+
+    <LinearLayout
+        android:id="@+id/inputView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_field_height"
+        android:background="@drawable/shape_input_field"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_height"
+            app:srcCompat="@drawable/ic_baseline_search" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space_8"
+            android:background="@null"
+            android:hint="@string/search_repo_input_hint" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_8"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/space_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputView"
+        tools:itemCount="10"
+        tools:listitem="@layout/repository_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

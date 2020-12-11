@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:title="Kotlin/Android" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="@dimen/space_16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:lines="5"
+                tools:text="@tools:sample/lorem/random" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImagePrivate"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginTop="@dimen/space_8"
+                app:layout_constraintEnd_toStartOf="@id/appCompatImageViewStar"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription"
+                app:srcCompat="@drawable/ic_baseline_lock" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageViewStar"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                app:layout_constraintEnd_toStartOf="@+id/textViewStars"
+                app:layout_constraintStart_toEndOf="@id/appCompatImagePrivate"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription"
+                app:srcCompat="@drawable/ic_baseline_star_rate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintBottom_toTopOf="@id/appCompatImageViewStar"
+                app:layout_constraintEnd_toStartOf="@id/appCompatImageViewWatches"
+                app:layout_constraintStart_toEndOf="@id/appCompatImageViewStar"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImageViewStar"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageViewWatches"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_8"
+                app:layout_constraintEnd_toStartOf="@id/textViewWatches"
+                app:layout_constraintStart_toEndOf="@id/textViewStars"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription"
+                app:srcCompat="@drawable/ic_baseline_eye" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWatches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:layout_constraintBottom_toTopOf="@id/appCompatImageViewWatches"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/appCompatImageViewWatches"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImageViewWatches"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageViewAvatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/space_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImagePrivate"
+                app:srcCompat="@drawable/ic_baseline_star_rate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_16"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toEndOf="@id/appCompatImageViewAvatar"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImagePrivate"
+                tools:text="Jetbarins Kotlin" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOwnerType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintStart_toStartOf="@+id/textViewOwner"
+                app:layout_constraintTop_toBottomOf="@id/textViewOwner"
+                tools:text="Jetbarins Kotlin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</LinearLayout>

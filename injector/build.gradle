@@ -1,0 +1,23 @@
+plugins {
+    id "config-android-module"
+    id "kotlin-kapt"
+}
+
+apply from: "$rootDir/config-android-module.gradle"
+
+dependencies {
+    implementation AndroidX.fragment
+
+    implementation Moshi.coreKotlin
+    kapt Moshi.codeGen
+
+    implementation project(Modules.kotlinUtils)
+
+    implementation Retrofit.core
+    implementation Retrofit.moshiConverter
+    implementation Retrofit.interceptor
+
+    implementation Dagger.core
+    kapt Dagger.androidProcessor
+    kapt Dagger.compiler
+}

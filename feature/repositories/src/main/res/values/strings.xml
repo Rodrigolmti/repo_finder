@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="retry_action">Retry</string>
+
+    <string name="repositories_search_error">Seem that there is a problem, try again!</string>
+
+    <string name="search_repo_creation_date">Creation date:</string>
+    <string name="search_repo_input_hint">Repository name</string>
+
+</resources>

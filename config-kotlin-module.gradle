@@ -1,0 +1,13 @@
+sourceSets {
+  main.kotlin.srcDirs += 'src/main/kotlin'
+}
+
+repositories {
+  mavenCentral()
+}
+
+test {
+  testLogging {
+    exceptionFormat = 'full'
+  }
+}

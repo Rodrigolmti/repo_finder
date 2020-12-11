@@ -1,0 +1,24 @@
+plugins {
+    id "config-android-module"
+    id "kotlin-kapt"
+}
+
+apply from: "$rootDir/config-android-module.gradle"
+
+dependencies {
+    implementation Lifecycle.commonJava8
+    implementation Lifecycle.viewModel
+    implementation Lifecycle.liveData
+    implementation AndroidX.fragment
+    implementation AndroidX.design
+
+    implementation project(Modules.kotlinUtils)
+
+    implementation Coroutines.test
+    implementation Kotlin.junit
+    implementation JUnit.core
+
+    implementation Dagger.core
+    kapt Dagger.androidProcessor
+    kapt Dagger.compiler
+}
