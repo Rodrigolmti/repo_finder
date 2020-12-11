@@ -3,6 +3,9 @@
 With this application you can search for repositories in the GitHub API, and if you do not have connection,
 your previous searches will be saved locally, so you can search them again.
 
+![alt text](https://github.com/Rodrigolmti/repo_finder/blob/master/images/WhatsApp%20Image%202020-12-06%20at%2010.58.26%20(1).jpeg)
+![alt text](https://github.com/Rodrigolmti/repo_finder/blob/master/images/WhatsApp%20Image%202020-12-06%20at%2010.58.26.jpeg)
+
 ## Architecture
 
 * Kotlin
